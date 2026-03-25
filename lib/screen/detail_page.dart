@@ -37,9 +37,9 @@ class _DetailPageState extends State<DetailPage> {
             padding: EdgeInsets.symmetric(vertical: 4,horizontal: 10),
             child: Row(
               children: [
-                Text("LAMINATED",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16,color: Colors.white),),
+                Text("LAMINATED",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 13,color: Colors.white),),
                 SizedBox(width: 10,),
-                Icon(Icons.arrow_forward_ios_outlined,color: Colors.white,size: 16,)
+                Icon(Icons.arrow_forward_ios_outlined,color: Colors.white,size: 13,)
               ],
             ),
           )),
@@ -47,12 +47,12 @@ class _DetailPageState extends State<DetailPage> {
             bottom: 15,
               left: 15,
               right: 15,
-              child: Container(
+              child: Container(//card veya material  kullanabilirdin
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: Colors.white,
             ),
-            height: 180,
+            height: 200,
             width: MediaQuery.of(context).size.width-30,
             child: Padding(
               padding: const EdgeInsets.all(8.0),
@@ -76,13 +76,16 @@ class _DetailPageState extends State<DetailPage> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text("LAMINATED",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
+                            SizedBox(height: 5,),
                             Text("Louis vuitton",style: TextStyle(fontSize: 16,color: Colors.black38),),
+                            SizedBox(height: 5,),
                             Text("One button V-neck sling long-sleeved waist female stitching dress",style: TextStyle(fontSize: 13,color: Colors.black38),)
                           ],
                         ),
                       )
                     ],
                   ),
+                  SizedBox(height: 5,),
                   Divider(height: 10,color: Colors.black38,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

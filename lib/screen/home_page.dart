@@ -15,7 +15,12 @@ class _HomePageState extends State<HomePage>
   @override
   void initState() {
     super.initState();
-    controller = TabController(length: 4, vsync: this);
+    controller = TabController(length: 4, vsync: this);//bu işlemi hep initstate de yap
+  }
+  @override
+  void dispose() {
+    controller.dispose();//dispose etmeyi unutma!
+    super.dispose();
   }
 
   @override
@@ -34,10 +39,10 @@ class _HomePageState extends State<HomePage>
         ],
         backgroundColor: Colors.transparent,
       ),
-      body: SingleChildScrollView(
+      body: SingleChildScrollView(//listviewde kullanabilirdin.
         child: Column(
           children: [
-            SingleChildScrollView(
+            SingleChildScrollView(//listviewde kullanabilirdin
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
@@ -53,7 +58,7 @@ class _HomePageState extends State<HomePage>
             SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Card(
+              child: Card(//material da kullanılabilir
                 elevation: 2,
                 color: Colors.white,
                 child: Padding(
@@ -67,7 +72,7 @@ class _HomePageState extends State<HomePage>
                           children: [
                             Row(
                               children: [
-                                CircleAvatar(
+                                CircleAvatar(//containerda kullanabilirsin
                                   backgroundImage: AssetImage(
                                     "assets/model1.jpeg",
                                   ),
@@ -104,6 +109,7 @@ class _HomePageState extends State<HomePage>
                         "It looks very temperament and is recommend to friends.",
                         style: TextStyle(fontSize: 12, color: Colors.black38),
                       ),
+                      SizedBox(height: 10,),
                       Row(
                         children: [
                           InkWell(
@@ -111,7 +117,7 @@ class _HomePageState extends State<HomePage>
                               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>DetailPage(imagePath: "assets/modelgrid1.jpeg")));
                             },
                             child: Hero(
-                              tag: "assets/modelgrid1.jpeg",
+                              tag: "assets/modelgrid1.jpeg",//a b c tarzı bi değer de verilebilirdi ama diğer kısım da da aynı değer olması lazım
                               child: Container(
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
@@ -189,14 +195,14 @@ class _HomePageState extends State<HomePage>
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(Icons.reply_outlined, color: Colors.black26),
+                              Icon(Icons.reply_outlined, color: Colors.brown.withValues(alpha: 0.2)),
                               SizedBox(width: 5),
                               Text(
                                 "1.7k",
                                 style: TextStyle(color: Colors.black26),
                               ),
                               SizedBox(width: 15),
-                              Icon(Icons.message, color: Colors.black26),
+                              Icon(Icons.message, color: Colors.brown.withValues(alpha: 0.2)),
                               SizedBox(width: 5),
                               Text(
                                 "325",
@@ -241,7 +247,7 @@ class _HomePageState extends State<HomePage>
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5),
-        color: Colors.grey.shade300,
+        color: Colors.brown.withValues(alpha: 0.2),
       ),
       margin: EdgeInsets.symmetric(vertical: 10),
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
