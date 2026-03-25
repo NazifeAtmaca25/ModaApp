@@ -40,16 +40,16 @@ class _HomePageState extends State<HomePage>
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  buildColumn("assets/model1.jpeg","assets/chanellogo.jpg"),
-                  buildColumn("assets/model2.jpeg","assets/chloelogo.png"),
-                  buildColumn("assets/model3.jpeg","assets/louisvuitton.jpg"),
-                  buildColumn("assets/model1.jpeg","assets/chanellogo.jpg"),
-                  buildColumn("assets/model2.jpeg","assets/chloelogo.png"),
-                  buildColumn("assets/model3.jpeg","assets/louisvuitton.jpg"),
+                  buildColumn("assets/model1.jpeg", "assets/chanellogo.jpg"),
+                  buildColumn("assets/model2.jpeg", "assets/chloelogo.png"),
+                  buildColumn("assets/model3.jpeg", "assets/louisvuitton.jpg"),
+                  buildColumn("assets/model1.jpeg", "assets/chanellogo.jpg"),
+                  buildColumn("assets/model2.jpeg", "assets/chloelogo.png"),
+                  buildColumn("assets/model3.jpeg", "assets/louisvuitton.jpg"),
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
@@ -65,60 +65,137 @@ class _HomePageState extends State<HomePage>
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Row(
-                              children: [CircleAvatar(
-                                backgroundImage: AssetImage("assets/model1.jpeg"),
-                                minRadius: 25,
-                              ),
-                                SizedBox(width: 10,),
+                              children: [
+                                CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                    "assets/model1.jpeg",
+                                  ),
+                                  minRadius: 25,
+                                ),
+                                SizedBox(width: 10),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Daisy",style: TextStyle(fontSize: 16,color: Colors.black),),
-                                    Text("34 mins ago",style: TextStyle(fontSize: 12,color: Colors.black38),)
+                                    Text(
+                                      "Daisy",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    Text(
+                                      "34 mins ago",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: Colors.black38,
+                                      ),
+                                    ),
                                   ],
-                                ),],
+                                ),
+                              ],
                             ),
-                            Icon(Icons.more_vert,size: 24,)
+                            Icon(Icons.more_vert, size: 24),
                           ],
                         ),
                       ),
-                      Text("This official website features a ribbed knit zipper jacket that is modern and stylish. "
-                          "It looks very temperament and is recommend to friends.",style: TextStyle(fontSize:12, color: Colors.black38 ),),
-                      Row(children: [
-                        buildContainer("# Louis vutton"),
-                        SizedBox(width: 15,),
-                        buildContainer("#Chloe")
-                      ],),
-                      Divider(height: 15,color: Colors.black26,),
+                      Text(
+                        "This official website features a ribbed knit zipper jacket that is modern and stylish. "
+                        "It looks very temperament and is recommend to friends.",
+                        style: TextStyle(fontSize: 12, color: Colors.black38),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: AssetImage("assets/modelgrid1.jpeg"),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            height: 200,
+                            width: (MediaQuery.of(context).size.width - 50) / 2,
+                          ),
+                          SizedBox(width: 10),
+                          Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/modelgrid2.jpeg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                height: 95,
+                                width:
+                                    (MediaQuery.of(context).size.width - 100) /
+                                    2,
+                              ),
+                              SizedBox(height: 10),
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/modelgrid3.jpeg"),
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                height: 95,
+                                width:
+                                    (MediaQuery.of(context).size.width - 100) /
+                                    2,
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          buildContainer("# Louis vutton"),
+                          SizedBox(width: 15),
+                          buildContainer("#Chloe"),
+                        ],
+                      ),
+                      Divider(height: 15, color: Colors.black26),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Icon(Icons.reply_outlined,color: Colors.black26,),
-                              SizedBox(width: 5,),
-                              Text("1.7k",style: TextStyle(color: Colors.black26),),
-                              SizedBox(width: 15,),
-                              Icon(Icons.message,color: Colors.black26),
-                              SizedBox(width: 5,),
-                              Text("325",style: TextStyle(color: Colors.black26))
+                              Icon(Icons.reply_outlined, color: Colors.black26),
+                              SizedBox(width: 5),
+                              Text(
+                                "1.7k",
+                                style: TextStyle(color: Colors.black26),
+                              ),
+                              SizedBox(width: 15),
+                              Icon(Icons.message, color: Colors.black26),
+                              SizedBox(width: 5),
+                              Text(
+                                "325",
+                                style: TextStyle(color: Colors.black26),
+                              ),
                             ],
                           ),
                           Row(
                             children: [
-                              Icon(Icons.favorite,color: Colors.red,),
-                              SizedBox(width: 5,),
-                              Text("2.3k",style: TextStyle(color: Colors.black26))
+                              Icon(Icons.favorite, color: Colors.red),
+                              SizedBox(width: 5),
+                              Text(
+                                "2.3k",
+                                style: TextStyle(color: Colors.black26),
+                              ),
                             ],
-                          )
+                          ),
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -126,10 +203,10 @@ class _HomePageState extends State<HomePage>
         controller: controller,
         indicatorColor: Colors.brown,
         tabs: [
-          Tab(icon: Icon(Icons.home_outlined, size: 30, color: Colors.black)),
-          Tab(icon: Icon(Icons.home_outlined, size: 30, color: Colors.black)),
-          Tab(icon: Icon(Icons.home_outlined, size: 30, color: Colors.black)),
-          Tab(icon: Icon(Icons.home_outlined, size: 30, color: Colors.black)),
+          Tab(icon: Icon(Icons.more, size: 30, color: Colors.grey)),
+          Tab(icon: Icon(Icons.play_arrow, size: 30, color: Colors.grey)),
+          Tab(icon: Icon(Icons.navigation, size: 30, color: Colors.grey)),
+          Tab(icon: Icon(Icons.supervised_user_circle, size: 30, color: Colors.grey)),
         ],
       ),
     );
@@ -137,14 +214,14 @@ class _HomePageState extends State<HomePage>
 
   Container buildContainer(String label) {
     return Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5),
-                          color: Colors.grey.shade300,
-                        ),
-                        margin: EdgeInsets.symmetric(vertical: 10),
-                        padding: EdgeInsets.symmetric(vertical: 5,horizontal: 15),
-                        child: Text(label,style: TextStyle(color: Colors.black38),),
-                      );
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(5),
+        color: Colors.grey.shade300,
+      ),
+      margin: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      child: Text(label, style: TextStyle(color: Colors.black38)),
+    );
   }
 
   Widget buildColumn(String profile, String logo) {
@@ -154,16 +231,18 @@ class _HomePageState extends State<HomePage>
         children: [
           Stack(
             children: [
-              CircleAvatar(
-                backgroundImage: AssetImage(profile),
-                minRadius: 40,
-              ),
+              CircleAvatar(backgroundImage: AssetImage(profile), minRadius: 40),
               Positioned(
                 right: 1,
                 bottom: 1,
                 child: ClipOval(
-                  child: Image.asset(logo,fit: BoxFit.fill,height: 25,width: 25,),
-                )
+                  child: Image.asset(
+                    logo,
+                    fit: BoxFit.fill,
+                    height: 25,
+                    width: 25,
+                  ),
+                ),
               ),
             ],
           ),
